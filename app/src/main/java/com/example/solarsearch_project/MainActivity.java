@@ -83,8 +83,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        NasaIMG();
         super.onResume();
+
+        Log.e("MainActivity", "onResume");
+        NasaIMG();
     }
 
     public void NasaIMG() {
