@@ -5,13 +5,18 @@ import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.solarsearch_project.R;
+import com.example.solarsearch_project.databinding.ActivityMainBinding;
 import com.example.solarsearch_project.databinding.FragmentHomeBinding;
 import com.squareup.picasso.Picasso;
 
@@ -25,7 +30,6 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class HomeFragment extends Fragment {
-
     private FragmentHomeBinding binding;
 
     private static final String NASA_API = "https://api.nasa.gov/planetary/apod?api_key=n9YNX94gAtAvKEijfUzDcfeA8kBVdKnoOLYiAn20";
@@ -38,12 +42,11 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-
-
         String nasaImgUrl = fetchNasaImg();
         if(nasaImgUrl != null) {
             showNasaImg(nasaImgUrl);
         }
+
 
         return root;
     }

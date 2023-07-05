@@ -13,7 +13,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:verticalScrollbarPosition="right">
+            android:verticalScrollbarPosition="right"
+            android:id="@+id/homescreen">
 
             <TextView
                 android:layout_width="match_parent"
