@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.search.SearchFragment">
+
 
  <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
      android:layout_width="match_parent"
      android:layout_height="match_parent"
      android:orientation="vertical">
@@ -16,15 +13,15 @@
          android:orientation="horizontal"
          android:layout_margin="5dp">
 
-    <EditText
+    <SearchView
         android:id="@+id/searchbar"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/grayblue"
-        android:inputType="textNoSuggestions"
-        android:hint="Search e.g.: Pluto, Moon, etc."
-        android:textColorHint="@color/menubackground"
-        app:backgroundTint="@color/complementary"
+        android:background="@drawable/searchview_rounded_border"
+        android:iconifiedByDefault="false"
+        android:searchIcon="@null"
+        android:queryHint="Search e.g.: Pluto, Moon, etc."
+
 
         />
 
@@ -57,4 +54,3 @@
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>

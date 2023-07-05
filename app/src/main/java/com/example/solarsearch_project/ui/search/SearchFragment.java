@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -47,6 +48,7 @@ public class SearchFragment extends Fragment {
 
 
 
+
         return root;
     }
 
@@ -79,12 +81,28 @@ public class SearchFragment extends Fragment {
             new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Log.e("Error2BeHandelt", error.toString());
+                    Log.e("ErrorvomAPIFetchSolar", error.toString());
                 }
             }
         );
         queue.add(stringRequest);
+
+        SearchView searchView = binding.searchbar;
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                elementArrayAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
     }
+
+
 
 
 }

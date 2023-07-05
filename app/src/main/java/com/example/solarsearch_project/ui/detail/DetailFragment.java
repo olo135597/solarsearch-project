@@ -14,6 +14,9 @@ import com.example.solarsearch_project.databinding.FragmentDetailBinding;
 
 public class DetailFragment extends Fragment {
 
+    private String elementId;
+    private static String FULL_SOLAR_API = "https://api.le-systeme-solaire.net/rest.php/bodies";
+
     private FragmentDetailBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
