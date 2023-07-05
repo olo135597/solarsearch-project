@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/toGallerie"
-            app:destination="@id/nav_gallery"
+            app:destination="@id/nav_search"
             app:launchSingleTop="true"
             app:popUpTo="@id/nav_home"
             app:popUpToInclusive="true" />
