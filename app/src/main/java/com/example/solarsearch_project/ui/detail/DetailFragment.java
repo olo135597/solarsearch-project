@@ -1,27 +1,27 @@
-package com.example.solarsearch_project.ui.slideshow;
+package com.example.solarsearch_project.ui.detail;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.solarsearch_project.databinding.FragmentSlideshowBinding;
+import com.example.solarsearch_project.databinding.FragmentDetailBinding;
 
-public class SlideshowFragment extends Fragment {
 
-    private FragmentSlideshowBinding binding;
+public class DetailFragment extends Fragment {
+
+    private FragmentDetailBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        SlideshowViewModel slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        DetailViewModel detailViewModel =
+                new ViewModelProvider(this).get(DetailViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentDetailBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
 
