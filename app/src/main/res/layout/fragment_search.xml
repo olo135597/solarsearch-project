@@ -12,27 +12,31 @@
      android:orientation="vertical">
      <LinearLayout
          android:layout_width="wrap_content"
-         android:layout_height="wrap_content">
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="100dp"
-        android:layout_weight="1">
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:layout_margin="5dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Search e.g.: Pluto, Moon, etc." />
-    </com.google.android.material.textfield.TextInputLayout>
+    <EditText
+        android:id="@+id/searchbar"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grayblue"
+        android:inputType="textNoSuggestions"
+        android:hint="Search e.g.: Pluto, Moon, etc."
+        android:textColorHint="@color/menubackground"
+        app:backgroundTint="@color/complementary"
+
+        />
 
      <ImageButton
          android:id="@+id/imageButton"
          android:layout_width="match_parent"
-         android:layout_height="wrap_content"
+         android:layout_height="match_parent"
+         android:paddingHorizontal="19dp"
          android:layout_weight="2"
          android:src="@drawable/baseline_search_24"
-         android:background="@color/background"/>
+         android:background="@color/background"
+         />
 
      </LinearLayout>
 
@@ -44,6 +48,7 @@
          android:background="@color/complementary"
          android:dividerHeight="10dp"
          android:layout_marginTop="20dp"/>
+
 
 
  </LinearLayout>

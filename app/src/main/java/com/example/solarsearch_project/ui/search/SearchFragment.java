@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -33,6 +34,7 @@ public class SearchFragment extends Fragment {
     private static final String Solar_API_ID = "https://api.le-systeme-solaire.net/rest.php/bodies?data=id";
     private FragmentSearchBinding binding;
 
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         SearchViewModel searchViewModel =
@@ -42,6 +44,8 @@ public class SearchFragment extends Fragment {
         View root = binding.getRoot();
 
         addElementClickableList(Solar_API_ID);
+
+
 
         return root;
     }
