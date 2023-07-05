@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
 import android.view.Menu;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
+    ImageButton searchorange;
+
 
 
     @Override
@@ -60,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        //Image Button
+        searchorange = (ImageButton) findViewById(R.id.searchorange);
     }
 
 
