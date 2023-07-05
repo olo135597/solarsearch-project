@@ -49,15 +49,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        binding.searchorange.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                HomeFragment Homefragment = new HomeFragment();
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.homescreen, Homefragment);
-                transaction.commit();
-            }
-        });
+//        navController.navigate(R.id.nav_gallery);
     }
 
     @Override

@@ -1,7 +1,10 @@
 package com.example.solarsearch_project.ui.home;
 
+import static androidx.navigation.fragment.FragmentKt.findNavController;
+
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.NavOptions;
+import androidx.navigation.Navigation;
 
 import com.example.solarsearch_project.R;
 import com.example.solarsearch_project.databinding.ActivityMainBinding;
@@ -41,6 +47,13 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        //Navigates to the Search Page
+        ImageButton imageButton = (ImageButton) binding.searchorange;
+        View.OnClickListener listener = v -> {
+            findNavController(this).navigate(R.id.toGallerie);
+        };
+        imageButton.setOnClickListener(listener);
 
         String nasaImgUrl = fetchNasaImg();
         if(nasaImgUrl != null) {
