@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="50dp"
             android:layout_marginTop="20dp"
             android:textSize="34sp"
             android:textStyle="bold"
@@ -24,9 +24,124 @@
             android:text="Element Name"/>
 
         <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="210.5dp"
+            android:background="@drawable/customborder"
+            android:layout_marginHorizontal="22dp"
+            android:src="@drawable/placeholder" />
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/placeholder"/>
+            android:layout_height="match_parent"
+            android:fillViewport="true" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="22dp"
+                android:layout_marginVertical="22dp"
+                android:background="@drawable/customborder">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/complementary"
+                    android:text="Information"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/customborder"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/complementary"
+                        android:text="Mass"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:text="Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/customborder"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/complementary"
+                        android:text="Moons"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:text="Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/customborder"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/complementary"
+                        android:text="Etc."/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:text="Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
