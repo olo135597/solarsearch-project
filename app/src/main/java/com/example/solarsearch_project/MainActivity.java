@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        ImageView imageView = findViewById(R.id.imageView4);
+        ImageView imageView = findViewById(R.id.pictureoftheday);
         Picasso.get().load(url).into(imageView);
 
 
