@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
-    private static final String NASA_API = "https://api.nasa.gov/planetary/apod?api_key=n9YNX94gAtAvKEijfUzDcfeA8kBVdKnoOLYiAn20";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
-                .permitAll().build();
-        StrictMode.setThreadPolicy(policy);
 
-        NasaIMG();
+//        NasaIMG();
 
         setSupportActionBar(binding.appBarMain.toolbar);
 
@@ -86,37 +83,10 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         Log.e("MainActivity", "onResume");
-        NasaIMG();
-    }
-
-    public void NasaIMG() {
-        String url = "";
-
-        OkHttpClient client = new OkHttpClient();
-
-        Request request = new Request.Builder()
-                .url(NASA_API)
-                .build();
-
-        try {
-            Response response = client.newCall(request).execute();
-            String jsonString = response.body().string();
-
-            JSONObject jsonObject = new JSONObject(jsonString);
-            url = jsonObject.getString("url");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        ImageView imageView = findViewById(R.id.pictureoftheday);
-        Picasso.get().load(url).into(imageView);
-
-
 
     }
+
+
 
 
 
