@@ -1,10 +1,14 @@
 package com.example.solarsearch_project.ui.search;
 
+import static androidx.navigation.fragment.FragmentKt.findNavController;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -20,9 +24,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.solarsearch_project.R;
 import com.example.solarsearch_project.databinding.FragmentSearchBinding;
 import com.example.solarsearch_project.helper.ElementJsonParser;
 import com.example.solarsearch_project.models.Element;
+import com.example.solarsearch_project.ui.detail.DetailFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,8 +53,6 @@ public class SearchFragment extends Fragment {
         addElementClickableList(Solar_API_ID);
 
 
-
-
         return root;
     }
 
@@ -64,26 +68,40 @@ public class SearchFragment extends Fragment {
                 ArrayAdapter<>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1);
         listElements.setAdapter(elementArrayAdapter);
 
+        AdapterView.OnItemClickListener onItemClickListener = new
+                AdapterView.OnItemClickListener()
+                {
+                    public void onItemClick(AdapterView parent, View v, int position, long id) {
+                        Intent intent = new Intent(getActivity().getApplicationContext(), DetailFragment.class);
+                        Element selected = (Element) parent.getItemAtPosition(position);
+                        intent.putExtra("searchId", selected.getId());
+                        intent.putExtra("SearchName", selected.getName());
+                        startActivity(intent);
+                    }
+                };
+
+        listElements.setOnItemClickListener(onItemClickListener);
+
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-            new Response.Listener<String>() {
-                 @Override
+                new Response.Listener<String>() {
+                    @Override
                     public void onResponse(String response) {
 
-                     try {
-                         ArrayList<Element> elements = ElementJsonParser.createElementFromJsonString(response);
-                         elementArrayAdapter.addAll(elements);
-                     } catch (JSONException e) {
-                         throw new RuntimeException(e);
-                     }
-                 }
-            },
-            new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Log.e("ErrorvomAPIFetchSolar", error.toString());
+                        try {
+                            ArrayList<Element> elements = ElementJsonParser.createElementFromJsonString(response);
+                            elementArrayAdapter.addAll(elements);
+                        } catch (JSONException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("ErrorvomAPIFetchSolar", error.toString());
+                    }
                 }
-            }
         );
         queue.add(stringRequest);
 
@@ -101,8 +119,6 @@ public class SearchFragment extends Fragment {
             }
         });
     }
-
-
 
 
 }
