@@ -5,8 +5,8 @@ public class Element {
     String name;
     String[] moons;
 
-    String massValue;
-    String massExponent;
+    double massValue;
+    double massExponent;
     double gravity;
     double density;
     int polarRadius;
@@ -15,7 +15,7 @@ public class Element {
     String discoveryDate;
     String bodyType;
 
-    public Element(String id, String name, String[] moons, double gravity, double density, int polarRadius, int equaRadius, String discoveredBy, String discoveryDate, String bodyType, String massValue, String massExponent) {
+    public Element(String id, String name, String[] moons, double gravity, double density, int polarRadius, int equaRadius, String discoveredBy, String discoveryDate, String bodyType, double massValue, double massExponent) {
         this.id = id;
         this.name = name;
         this.moons = moons;
@@ -74,19 +74,19 @@ public class Element {
         this.density = density;
     }
 
-    public String getMassValue() {
+    public double getMassValue() {
         return massValue;
     }
 
-    public void setMassValue(String massValue) {
+    public void setMassValue(double massValue) {
         this.massValue = massValue;
     }
 
-    public String getMassExponent() {
+    public double getMassExponent() {
         return massExponent;
     }
 
-    public void setMassExponent(String massExponent) {
+    public void setMassExponent(double massExponent) {
         this.massExponent = massExponent;
     }
 

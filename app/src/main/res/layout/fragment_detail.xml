@@ -54,17 +54,16 @@
                     android:textStyle="bold" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
                         android:layout_marginVertical="8dp"
                         android:background="@drawable/customborder"
-                        android:minWidth="350dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -91,12 +90,11 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
                         android:layout_marginVertical="8dp"
                         android:background="@drawable/customborder"
-                        android:minWidth="350dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -142,12 +140,11 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
                         android:layout_marginVertical="8dp"
                         android:background="@drawable/customborder"
-                        android:minWidth="350dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -174,12 +171,11 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
                         android:layout_marginVertical="8dp"
                         android:background="@drawable/customborder"
-                        android:minWidth="350dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -206,12 +202,11 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
                         android:layout_marginVertical="8dp"
                         android:background="@drawable/customborder"
-                        android:minWidth="350dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -238,12 +233,11 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
                         android:layout_marginVertical="8dp"
                         android:background="@drawable/customborder"
-                        android:minWidth="350dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -270,12 +264,11 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
                         android:layout_marginVertical="8dp"
                         android:background="@drawable/customborder"
-                        android:minWidth="350dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -302,12 +295,11 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
                         android:layout_marginVertical="8dp"
                         android:background="@drawable/customborder"
-                        android:minWidth="350dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -334,12 +326,11 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
                         android:layout_marginVertical="8dp"
                         android:background="@drawable/customborder"
-                        android:minWidth="350dp"
                         android:orientation="vertical">
 
                         <TextView

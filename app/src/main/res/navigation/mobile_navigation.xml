@@ -9,8 +9,7 @@
         android:id="@+id/nav_home"
         android:name="com.example.solarsearch_project.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home"
-        >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/toHome"
             app:destination="@id/nav_search"
@@ -23,7 +22,14 @@
         android:id="@+id/nav_search"
         android:name="com.example.solarsearch_project.ui.search.SearchFragment"
         android:label="@string/menu_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/toSearch"
+            app:destination="@id/nav_detail"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nav_search"
+            app:popUpToInclusive="true" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_search_planets"

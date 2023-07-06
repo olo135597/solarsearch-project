@@ -11,12 +11,14 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -42,13 +44,13 @@ public class SearchFragment extends Fragment {
 
     private static final String Solar_API_ID = "https://api.le-systeme-solaire.net/rest.php/bodies?data=id";
 
+    String Detail_Infos_Link = "https://api.le-systeme-solaire.net/rest.php/bodies?filter%5B%5D=id%2Ceq%2C";
+
     private FragmentSearchBinding binding;
-
-
-
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         SearchViewModel searchViewModel =
                 new ViewModelProvider(this).get(SearchViewModel.class);
 
@@ -59,7 +61,6 @@ public class SearchFragment extends Fragment {
         View root = binding.getRoot();
 
         addElementClickableList(Solar_API_ID);
-
 
         return root;
     }
@@ -76,19 +77,21 @@ public class SearchFragment extends Fragment {
                 ArrayAdapter<>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1);
         listElements.setAdapter(elementArrayAdapter);
 
-        AdapterView.OnItemClickListener onItemClickListener = new
-                AdapterView.OnItemClickListener()
-                {
-                    public void onItemClick(AdapterView parent, View v, int position, long id) {
-                        Intent intent = new Intent(getActivity().getApplicationContext(), DetailFragment.class);
-                        Element selected = (Element) parent.getItemAtPosition(position);
-                        intent.putExtra("searchId", selected.getId());
-                        intent.putExtra("SearchName", selected.getName());
-                        startActivity(intent);
-                    }
-                };
+        AdapterView.OnItemClickListener listener = new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView parent, View v, int position, long id) {
 
-        listElements.setOnItemClickListener(onItemClickListener);
+                Element selected = (Element) parent.getItemAtPosition(position);
+
+                String Id = selected.getId();
+                String Detail_Infos_Link = "https://api.le-systeme-solaire.net/rest.php/bodies?filter%5B%5D=id%2Ceq%2C" + Id;
+
+                Bundle b = new Bundle();
+                b.putString("detailInfosLink", Detail_Infos_Link);
+                Navigation.findNavController(v).navigate(R.id.toSearch, b);
+            }
+
+        };
+        listElements.setOnItemClickListener(listener);
 
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
