@@ -73,13 +73,4 @@ public class MainActivity extends AppCompatActivity {
         Log.e("MainActivity", "onResume");
 
     }
-
-
-
-
-
-
-
-
-
 }
