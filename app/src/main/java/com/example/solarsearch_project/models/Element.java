@@ -132,7 +132,7 @@ public class Element {
 
     @Override
     public String toString() {
-        return name;
+        return englishName;
     }
 
 }
