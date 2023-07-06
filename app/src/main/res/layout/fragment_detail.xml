@@ -18,6 +18,7 @@
 
 
             <TextView
+                android:id="@+id/elementName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -119,7 +120,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="8dp"
                                 android:layout_marginBottom="4dp"
-                                android:text="Value"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -210,7 +210,6 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/polarRadius"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
@@ -221,6 +220,7 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/polarRadius"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"

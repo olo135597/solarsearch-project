@@ -2,7 +2,7 @@ package com.example.solarsearch_project.models;
 
 public class Element {
     String id;
-    String name;
+    String englishName;
     String[] moons;
 
     double massValue;
@@ -17,7 +17,7 @@ public class Element {
 
     public Element(String id, String name, String[] moons, double gravity, double density, int polarRadius, int equaRadius, String discoveredBy, String discoveryDate, String bodyType, double massValue, double massExponent) {
         this.id = id;
-        this.name = name;
+        this.englishName = name;
         this.moons = moons;
         this.gravity = gravity;
         this.density = density;
@@ -43,11 +43,11 @@ public class Element {
     }
 
     public String getName() {
-        return name;
+        return englishName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.englishName = name;
     }
 
     public String[] getMoons() {
