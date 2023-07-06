@@ -18,6 +18,8 @@ import android.widget.SearchView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 
 import com.android.volley.Request;
@@ -46,6 +48,10 @@ public class SearchFragment extends Fragment {
 
     String Detail_Infos_Link = "https://api.le-systeme-solaire.net/rest.php/bodies?filter%5B%5D=id%2Ceq%2C";
 
+    private String Solar_API_ID_CATEGORY = "https://api.le-systeme-solaire.net/rest.php/bodies?data=id&filter%5B%5D=bodyType%2Ceq%2C";
+
+    private String finalUrl = "";
+
     private FragmentSearchBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -54,13 +60,58 @@ public class SearchFragment extends Fragment {
         SearchViewModel searchViewModel =
                 new ViewModelProvider(this).get(SearchViewModel.class);
 
-        Kategory = "Planet";
-        String Solar_API_CATEGORY = "https://api.le-systeme-solaire.net/rest.php/bodies?data=id&filter%5B%5D=bodyType%2Ceq%2C" + Kategory;
+
+
+        NavController controller = findNavController(this);
+        NavDestination destination = controller.getCurrentDestination();
+        if(destination != null) {
+            int destinationId = destination.getId();
+
+
+
+
+
+            if(destinationId == R.id.nav_search_dwarfs) {
+                Log.e("Wir sind auf Search", "Aber mit dem Filter Zwergplaneten");
+                finalUrl = Solar_API_ID_CATEGORY + "Dwarf Planet";
+                Log.e("search", finalUrl);
+            }
+
+            if (destinationId == R.id.nav_search_planets) {
+                Log.e("We are on planet Sylva", "planet");
+                finalUrl = Solar_API_ID_CATEGORY + "Planet";
+                Log.e("planet", finalUrl);
+            }
+
+            if(destinationId == R.id.nav_search_comets) {
+                Log.e("Comet", "Comet");
+                finalUrl = Solar_API_ID_CATEGORY + "Comet";
+                Log.e("comet", finalUrl);
+            }
+
+            if(destinationId == R.id.nav_search_stars) {
+                Log.e("star", "star");
+                finalUrl = Solar_API_ID_CATEGORY + "Star";
+                Log.e("star", finalUrl);
+            }
+
+            if(destinationId == R.id.nav_search_moons) {
+                Log.e("moon", "moon");
+                finalUrl = Solar_API_ID_CATEGORY + "moon";
+                Log.e("moon", finalUrl);
+            }
+
+            if (destinationId == R.id.nav_search){
+                finalUrl = Solar_API_ID;
+                Log.e("main", finalUrl);
+            }
+        }
+
 
         binding = FragmentSearchBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        addElementClickableList(Solar_API_ID);
+        addElementClickableList(finalUrl);
 
         return root;
     }
