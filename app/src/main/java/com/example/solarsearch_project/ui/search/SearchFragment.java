@@ -47,9 +47,9 @@ public class SearchFragment extends Fragment {
     private static final String Solar_API_ID = "https://api.le-systeme-solaire.net/rest.php/bodies?data=englishName%2Cid";
 
 
-    String Detail_Infos_Link = "https://api.le-systeme-solaire.net/rest.php/bodies?filter%5B%5D=id%2Ceq%2C";
+    String Detail_Infos_Link = "";
 
-    private String Solar_API_ID_CATEGORY = "https://api.le-systeme-solaire.net/rest.php/bodies?data=englishName%2Cid&filter%5B%5D=bodyType%2Ceq%2C";
+    private String Solar_API_ID_CATEGORY = "https://api.le-systeme-solaire.net/rest.php/bodies?filter%5B%5D=bodyType%2Ceq%2C";
 
     private String finalUrl = "";
 
@@ -75,36 +75,42 @@ public class SearchFragment extends Fragment {
             if(destinationId == R.id.nav_search_dwarfs) {
                 Log.e("Wir sind auf Search", "Aber mit dem Filter Zwergplaneten");
                 finalUrl = Solar_API_ID_CATEGORY + "Dwarf Planet";
+                Detail_Infos_Link = Solar_API_ID_CATEGORY + "Dwarf Planet" + "&filter%5B%5D=id%2Ceq%2C";
                 Log.e("search", finalUrl);
             }
 
             if (destinationId == R.id.nav_search_planets) {
                 Log.e("We are on planet Sylva", "planet");
                 finalUrl = Solar_API_ID_CATEGORY + "Planet";
+                Detail_Infos_Link = Solar_API_ID_CATEGORY + "Planet" + "&filter%5B%5D=id%2Ceq%2C";
                 Log.e("planet", finalUrl);
             }
 
             if(destinationId == R.id.nav_search_comets) {
                 Log.e("Comet", "Comet");
                 finalUrl = Solar_API_ID_CATEGORY + "Comet";
+                Detail_Infos_Link = Solar_API_ID_CATEGORY + "Comet" + "&filter%5B%5D=id%2Ceq%2C";
                 Log.e("comet", finalUrl);
             }
 
             if(destinationId == R.id.nav_search_stars) {
                 Log.e("star", "star");
                 finalUrl = Solar_API_ID_CATEGORY + "Star";
+                Detail_Infos_Link = Solar_API_ID_CATEGORY + "Star" + "&filter%5B%5D=id%2Ceq%2C";
                 Log.e("star", finalUrl);
             }
 
             if(destinationId == R.id.nav_search_moons) {
                 Log.e("moon", "moon");
                 finalUrl = Solar_API_ID_CATEGORY + "Moon";
+                Detail_Infos_Link = Solar_API_ID_CATEGORY + "Moon" + "&filter%5B%5D=id%2Ceq%2C";
                 Log.e("moon", finalUrl);
             }
 
             if (destinationId == R.id.nav_search){
                 finalUrl = Solar_API_ID;
                 Log.e("main", finalUrl);
+                Detail_Infos_Link = "https://api.le-systeme-solaire.net/rest.php/bodies?filter%5B%5D=id%2Ceq%2C";
             }
         }
 
