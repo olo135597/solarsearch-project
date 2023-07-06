@@ -23,7 +23,9 @@ public class ElementJsonParser {
 
              Element element = new Element();
              element.setId(jsonElement.getString("id"));
+             element.setName(jsonElement.getString("englishName"));
              elements.add(element);
+             Log.e("pls0",element.getName());
          }
      }
 

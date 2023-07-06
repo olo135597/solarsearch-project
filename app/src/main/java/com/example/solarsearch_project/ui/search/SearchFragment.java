@@ -41,14 +41,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchFragment extends Fragment {
-    private String Kategory;
 
 
-    private static final String Solar_API_ID = "https://api.le-systeme-solaire.net/rest.php/bodies?data=id";
+
+    private static final String Solar_API_ID = "https://api.le-systeme-solaire.net/rest.php/bodies?data=englishName%2Cid";
+
 
     String Detail_Infos_Link = "https://api.le-systeme-solaire.net/rest.php/bodies?filter%5B%5D=id%2Ceq%2C";
 
-    private String Solar_API_ID_CATEGORY = "https://api.le-systeme-solaire.net/rest.php/bodies?data=id&filter%5B%5D=bodyType%2Ceq%2C";
+    private String Solar_API_ID_CATEGORY = "https://api.le-systeme-solaire.net/rest.php/bodies?data=englishName%2Cid&filter%5B%5D=bodyType%2Ceq%2C";
 
     private String finalUrl = "";
 
@@ -97,7 +98,7 @@ public class SearchFragment extends Fragment {
 
             if(destinationId == R.id.nav_search_moons) {
                 Log.e("moon", "moon");
-                finalUrl = Solar_API_ID_CATEGORY + "moon";
+                finalUrl = Solar_API_ID_CATEGORY + "Moon";
                 Log.e("moon", finalUrl);
             }
 
@@ -153,6 +154,7 @@ public class SearchFragment extends Fragment {
                         try {
                             ArrayList<Element> elements = ElementJsonParser.createElementFromJsonString(response);
                             elementArrayAdapter.addAll(elements);
+
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
