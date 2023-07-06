@@ -47,7 +47,12 @@
          android:layout_marginTop="20dp"/>
 
 
-
+    <ProgressBar
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        android:outlineSpotShadowColor="@color/complementary"/>
  </LinearLayout>
 
 

@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment {
         //Navigates to the Search Page
         ImageButton imageButton = (ImageButton) binding.searchorange;
         View.OnClickListener listener = v -> {
-            findNavController(this).navigate(R.id.toGallerie);
+            findNavController(this).navigate(R.id.toHome);
         };
         imageButton.setOnClickListener(listener);
 

@@ -9,16 +9,51 @@
             android:color="@color/white"
 
             android:title="@string/menu_home"
+            android:textAppearance="@style/MenuTextStyle"
             />
         <item
             android:id="@+id/nav_search"
             android:color="@color/white"
 
-            android:title="@string/menu_search" />
+            android:title="@string/menu_search"
+            android:textAppearance="@style/MenuTextStyle"
+            />
+
+        <item
+            android:id="@+id/nav_search_planets"
+            android:color="@color/complementary"
+            android:title="@string/menu_search_planets"
+            android:textAppearance="@style/MenuTextStyleKategory"/>
+
+        <item
+            android:id="@+id/nav_search_dwarfs"
+            android:color="@color/complementary"
+            android:title="@string/menu_search_dwarfs"
+            android:textAppearance="@style/MenuTextStyleKategory"/>
+
+        <item
+            android:id="@+id/nav_search_moons"
+            android:color="@color/complementary"
+            android:title="@string/menu_search_moons"
+            android:textAppearance="@style/MenuTextStyleKategory"/>
+
+        <item
+            android:id="@+id/nav_search_comets"
+            android:color="@color/complementary"
+            android:title="@string/menu_search_comets"
+            android:textAppearance="@style/MenuTextStyleKategory"/>
+
+        <item
+            android:id="@+id/nav_search_stars"
+            android:color="@color/complementary"
+            android:title="@string/menu_search_stars"
+            android:textAppearance="@style/MenuTextStyleKategory"/>
         <item
             android:id="@+id/nav_detail"
             android:color="@color/white"
+            
 
-            android:title="@string/menu_detail" />
+            android:title="@string/menu_detail"
+            android:textAppearance="@style/MenuTextStyle"/>
     </group>
 </menu>

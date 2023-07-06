@@ -31,15 +31,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchFragment extends Fragment {
+    private String Kategory;
+
 
     private static final String Solar_API_ID = "https://api.le-systeme-solaire.net/rest.php/bodies?data=id";
+
     private FragmentSearchBinding binding;
+
+
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         SearchViewModel searchViewModel =
                 new ViewModelProvider(this).get(SearchViewModel.class);
+
+        Kategory = "Planet";
+        String Solar_API_CATEGORY = "https://api.le-systeme-solaire.net/rest.php/bodies?data=id&filter%5B%5D=bodyType%2Ceq%2C" + Kategory;
 
         binding = FragmentSearchBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
