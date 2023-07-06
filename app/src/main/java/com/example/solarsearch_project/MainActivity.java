@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.SearchView;
 
 import com.example.solarsearch_project.ui.home.HomeFragment;
 import com.google.android.material.navigation.NavigationView;
