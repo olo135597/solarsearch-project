@@ -9,5 +9,6 @@
     <style name="MenuTextStyleKategory">
         <item name="android:textColor">@color/complementary</item>
 
+
     </style>
 </resources>

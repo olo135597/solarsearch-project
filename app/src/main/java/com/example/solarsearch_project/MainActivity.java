@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
+
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_search, R.id.nav_search_planets, R.id.nav_search_dwarfs, R.id.nav_search_moons, R.id.nav_search_comets, R.id.nav_search_stars, R.id.nav_detail)

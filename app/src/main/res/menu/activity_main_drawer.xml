@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
+    tools:showIn="navigation_view"
+    >
 
-    <group android:checkableBehavior="single" android:color="@color/white">
+    <group android:checkableBehavior="single" android:color="@color/white" android:id="@+id/menu_item">
         <item
             android:id="@+id/nav_home"
             android:color="@color/white"
 
             android:title="@string/menu_home"
-            android:textAppearance="@style/MenuTextStyle"
+            android:textAppearance="@style/MenuTextStyleKategory"
             />
         <item
             android:id="@+id/nav_search"
@@ -54,6 +55,7 @@
             
 
             android:title="@string/menu_detail"
-            android:textAppearance="@style/MenuTextStyle"/>
+            android:textAppearance="@style/MenuTextStyleKategory"/>
     </group>
+
 </menu>

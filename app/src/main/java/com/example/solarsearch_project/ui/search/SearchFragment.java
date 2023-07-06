@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -15,8 +17,11 @@ import android.widget.ListView;
 import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.Group;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -29,6 +34,7 @@ import com.example.solarsearch_project.databinding.FragmentSearchBinding;
 import com.example.solarsearch_project.helper.ElementJsonParser;
 import com.example.solarsearch_project.models.Element;
 import com.example.solarsearch_project.ui.detail.DetailFragment;
+import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,6 +49,11 @@ public class SearchFragment extends Fragment {
     private static final String Solar_API_ID = "https://api.le-systeme-solaire.net/rest.php/bodies?data=id";
 
     private FragmentSearchBinding binding;
+    private String Solar_API_ID_CATEGORY = "https://api.le-systeme-solaire.net/rest.php/bodies?data=id&filter%5B%5D=bodyType%2Ceq%2C";
+
+    private String finalUrl = "";
+
+
 
 
 
@@ -52,13 +63,51 @@ public class SearchFragment extends Fragment {
         SearchViewModel searchViewModel =
                 new ViewModelProvider(this).get(SearchViewModel.class);
 
-        Kategory = "Planet";
-        String Solar_API_CATEGORY = "https://api.le-systeme-solaire.net/rest.php/bodies?data=id&filter%5B%5D=bodyType%2Ceq%2C" + Kategory;
+
+        NavController controller = findNavController(this);
+        NavDestination destination = controller.getCurrentDestination();
+        if(destination != null) {
+            int destinationId = destination.getId();
+
+
+
+
+
+            if(destinationId == R.id.nav_search_dwarfs) {
+                Log.e("Wir sind auf Search", "Aber mit dem Filter Zwergplaneten");
+                finalUrl = Solar_API_ID_CATEGORY + "Dwarf Planet";
+            }
+
+            if (destinationId == R.id.nav_search_planets) {
+                Log.e("We are on planet Sylva", "planet");
+                finalUrl = Solar_API_ID_CATEGORY + "Planet";
+            }
+
+            if(destinationId == R.id.nav_search_comets) {
+                Log.e("Comet", "Comet");
+                finalUrl = Solar_API_ID_CATEGORY + "Comet";
+            }
+
+            if(destinationId == R.id.nav_search_stars) {
+                Log.e("star", "star");
+                finalUrl = Solar_API_ID_CATEGORY + "Star";
+            }
+
+            if(destinationId == R.id.nav_search_moons) {
+                Log.e("moon", "moon");
+            }
+
+            else {
+                finalUrl = Solar_API_ID;
+            }
+        }
+
+
 
         binding = FragmentSearchBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        addElementClickableList(Solar_API_ID);
+        addElementClickableList(finalUrl);
 
 
         return root;
@@ -127,6 +176,9 @@ public class SearchFragment extends Fragment {
             }
         });
     }
+
+
+
 
 
 }
