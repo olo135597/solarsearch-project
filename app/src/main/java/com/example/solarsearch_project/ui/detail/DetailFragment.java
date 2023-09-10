@@ -53,7 +53,16 @@ public class DetailFragment extends Fragment {
         binding = FragmentDetailBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        String Detail_Infos_Link = getArguments().getString("detailInfosLink");
+        String Detail_Infos_Link = "";
+
+        Bundle args = getArguments();
+        if (args != null) {
+            Detail_Infos_Link = args.getString("detailInfosLink");
+            if (Detail_Infos_Link == null) {
+                Detail_Infos_Link = "https://api.le-systeme-solaire.net/rest.php/bodies?filter%5B%5D=id%2Ceq%2Cterre";
+            }
+
+        }
         Log.e("ID", Detail_Infos_Link);
 
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());

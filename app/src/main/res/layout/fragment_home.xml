@@ -70,7 +70,7 @@
                 android:layout_marginRight="22dp"
                 android:textSize="16sp"
                 android:textColor="@color/white"
-                android:text="text, text and more text text, text and more text text, text and more text"/>
+                android:text="Solar Search is an App where you can search your favorite Elements of our solarsystem. Click on the Searchbutton or use the navigation to experience the solarsystem"/>
 
             <ImageButton
                 android:id="@+id/searchorange"

@@ -15,6 +15,7 @@
     <string name="menu_search_moons">Moons</string>
     <string name="menu_search_comets">Comets</string>
     <string name="menu_search_stars">Stars</string>
+    <string name="menu_search_asteroids">Asteroids</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
